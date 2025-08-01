@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://jwdxit661ukh"]
+
+[ext_resource type="PackedScene" uid="uid://dm3jk1844di3k" path="res://Scene/table.tscn" id="1_sblpm"]
+[ext_resource type="PackedScene" uid="uid://n40bg5ejl74t" path="res://Scene/goal_detector.tscn" id="2_r34rm"]
+[ext_resource type="PackedScene" uid="uid://d367d5ubt8qjk" path="res://Scene/barrier.tscn" id="3_r34rm"]
+
+[node name="Main" type="Node3D"]
+
+[node name="Table" parent="." instance=ExtResource("1_sblpm")]
+
+[node name="Goal Detectors" type="Node3D" parent="."]
+
+[node name="Home" parent="Goal Detectors" instance=ExtResource("2_r34rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.769284, -0.0382478, 0)
+
+[node name="Visitor" parent="Goal Detectors" instance=ExtResource("2_r34rm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.769, -0.038, 0)
+
+[node name="Walls" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Barrier" parent="Walls" instance=ExtResource("3_r34rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.869712, 0, -3.80163e-08)
+
+[node name="Barrier2" parent="Walls" instance=ExtResource("3_r34rm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.87, 0, 3.80289e-08)
+
+[node name="Barrier3" parent="Walls" instance=ExtResource("3_r34rm")]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -5.82823e-08, 0, -1.33334)
+
+[node name="Barrier4" parent="Walls" instance=ExtResource("3_r34rm")]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 5.82673e-08, 0, 1.333)
+
+[node name="Barrier5" parent="Walls" instance=ExtResource("3_r34rm")]
+transform = Transform3D(1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 6.10796e-08, 3.00317, 1.39734)
